@@ -14,7 +14,15 @@ jobs:
       uses: actions/setup-python@v2
 
     - name: Instalar dependências
-      run: pip install pytest
+      run: pip install pytest coverage
 
     - name: Rodar pytest
       run: pytest
+
+    - name: Run Codecov
+      run: coverage run -m pytest
+
+    - name: Upload Codecov
+      user: codecov/codecov-action@v3
+      env: 
+        CODECOV_TOKEN: 6e047ca5-5be9-4c19-8d61-ffbabed115c6
