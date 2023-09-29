@@ -1,4 +1,5 @@
 name: Testes Automatizados
+on:[push]
 
 jobs:
   testes:
